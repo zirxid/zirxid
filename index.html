@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="widht=device-widht, intial-scale=1.0">
+        <title> CINDYKU SAYANG </title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        />
+      </head>
+      <body style="
+      background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5d2f751b-0791-4cb6-a646-8cfecd441a73/dftidq9-225b64ad-03c8-4565-861d-ae93119ca12c.png/v1/fill/w_1095,h_730,q_70,strp/anime_sano_city_backdrop_5_by_kuramochikomix_dftidq9-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9ODk2IiwicGF0aCI6IlwvZlwvNWQyZjc1MWItMDc5MS00Y2I2LWE2NDYtOGNmZWNkNDQxYTczXC9kZnRpZHE5LTIyNWI2NGFkLTAzYzgtNDU2NS04NjFkLWFlOTMxMTljYTEyYy5wbmciLCJ3aWR0aCI6Ijw9MTM0NCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.DI5hwi0Uec8HzpAXTyvKQ6UjJXciMFWUyHUfdC-zlEM) ;
+      " 
+      class="flex justify-center h-screen items-center "
+      >
+<div 
+class ="bg-white border px-20 py-5 border-4 border-pink-500 shadow-lg shadow-red-300 rounded-3xl text-center animate__animated animate__backInDown m-8 w-50" id="kartu"
+>
+    <h1 class="textl-4xl text-blue-800 font-bold animate__animated animate__pulse animate__delay-1s animate__infinite animate_slow" >APA KABAR SAYANG</h1>
+    <h1 class="texttl-7xl text-red-500 font-bold text-center animate__animated animate__fadeIn animate__delay-1s animate_slow">Alya Putri Cindy</h1>
+
+    <button class="p-2 mt-1 bg-pink-200 shadow-lg shadow-white-900 rounded-3xl text-align-right font-bold hover:bg-pink-900 shadow-white-900 transition ease-in w-full animate__animated animate__delay-1s animate__infinite animate__tada" 
+    onclick="ubahkartu()"
+    
+    >klik ayy :" </button>
+    </div>
+  
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+    <script>
+        const duration = 30 * 1000,
+  animationEnd = Date.now() + duration;
+
+let skew = 1;
+
+function randomInRange(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+(function frame() {
+  const timeLeft = animationEnd - Date.now(),
+    ticks = Math.max(200, 500 * (timeLeft / duration));
+
+  skew = Math.max(0.8, skew - 0.001);
+
+  confetti({
+    particleCount: 1,
+    startVelocity: 0,
+    ticks: ticks,
+    origin: {
+      x: Math.random(),
+      // since particles fall down, skew start toward the top
+      y: Math.random() * skew - 0.2,
+    },
+    colors: ["#ffffff"],
+    shapes: ["circle"],
+    gravity: randomInRange(0.4, 0.6),
+    scalar: randomInRange(0.4, 1),
+    drift: randomInRange(-0.4, 0.4),
+  });
+
+  if (timeLeft > 0) {
+    requestAnimationFrame(frame);
+  }
+})();
+
+let kartu = document.getElementById("kartu");
+function ubahkartu() {
+    kartu.innerHTML =`  <h1 class="font-semibold text-wrap mt-2 animate__animated animate__zoomIn">
+        Sayang, aku lho sayang kamu :D. Kamu jangan ninggalin aku yaa. Janji kita bakal sampai nikah dan punya 4 anak. Kamu jadi data analyst aku jadi engineer :D
+    </h1>
+    <h2 class="mt-3 animate__animated animate__fadeIn"> Dari: - zirx suwamimu
+        </h2> 
+
+<button class="p-2 mt-1 bg-red-200 shadow-lg shadow-white-900 rounded-3xl text-align-right font-bold hover:bg-red-900 shadow-white-900 transition ease-in w-full animate__animated animate__delay-1s animate__infinite animate__tada" 
+    onclick="refresh()"
+    >
+
+    ayok balik :p
+    </button>
+    `;
+}
+
+    function refresh() {
+        location.reload();
+}
+
+
+    
+    </script>
+      </body>
+</html>
